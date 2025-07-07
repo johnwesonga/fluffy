@@ -150,17 +150,12 @@ pub fn view(model: Model) -> vnode.Element(Msg) {
         ])
       Loading -> div([], [p([], [text("Loading...")])])
       LoadedUser(data) -> {
-        //let users = decoded_user(data)
-        case data {
-          user_list -> {
-            div([], [
-              p([], [text("User Data Loaded:")]),
-              view_user_list(user_list),
-              button([on_click(Ping)], [text("Ping")]),
-              button([on_click(FetchUserData)], [text("FetchUserData Again")]),
-            ])
-          }
-        }
+        div([], [
+          p([], [text("User Data Loaded:")]),
+          view_user_list(data),
+          button([on_click(Ping)], [text("Ping")]),
+          button([on_click(FetchUserData)], [text("FetchUserData Again")]),
+        ])
       }
     },
   ])

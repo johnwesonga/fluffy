@@ -5126,12 +5126,11 @@ function view(model) {
           );
         } else {
           let data = model[0];
-          let user_list = data;
           return div(
             toList([]),
             toList([
               p(toList([]), toList([text2("User Data Loaded:")])),
-              view_user_list(user_list),
+              view_user_list(data),
               button(toList([on_click(new Ping())]), toList([text2("Ping")])),
               button(
                 toList([on_click(new FetchUserData())]),
