@@ -38,7 +38,7 @@ export async function getData() {
 
 }
 
-export async function getData2() {
+export async function getDummyUserData() {
   fetch('https://dummyjson.com/users')
     .then(res => res.json())
     .then(console.log);

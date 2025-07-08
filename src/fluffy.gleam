@@ -137,20 +137,20 @@ pub fn view(model: Model) -> vnode.Element(Msg) {
     p([], [text("Fluffy")]),
     case model {
       NotLoaded ->
-        div([], [
+        div([attribute.id("not-loaded")], [
           p([], [text("Click the button to ping the server.")]),
           button([on_click(Ping)], [text("Ping")]),
           button([on_click(FetchUserData)], [text("FetchUserData")]),
         ])
       Loaded(data) ->
-        div([], [
+        div([attribute.id("ping-data")], [
           p([], [text(data)]),
           button([on_click(Ping)], [text("Ping Again")]),
           button([on_click(FetchUserData)], [text("FetchUserData Again")]),
         ])
-      Loading -> div([], [p([], [text("Loading...")])])
+      Loading -> div([attribute.id("loading")], [p([], [text("Loading...")])])
       LoadedUser(data) -> {
-        div([], [
+        div([attribute.id("user-data")], [
           p([], [text("User Data Loaded:")]),
           view_user_list(data),
           button([on_click(Ping)], [text("Ping")]),

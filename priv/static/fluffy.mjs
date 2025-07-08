@@ -5090,7 +5090,7 @@ function view(model) {
       (() => {
         if (model instanceof NotLoaded) {
           return div(
-            toList([]),
+            toList([id("not-loaded")]),
             toList([
               p(
                 toList([]),
@@ -5105,13 +5105,13 @@ function view(model) {
           );
         } else if (model instanceof Loading) {
           return div(
-            toList([]),
+            toList([id("loading")]),
             toList([p(toList([]), toList([text2("Loading...")]))])
           );
         } else if (model instanceof Loaded) {
           let data = model[0];
           return div(
-            toList([]),
+            toList([id("ping-data")]),
             toList([
               p(toList([]), toList([text2(data)])),
               button(
@@ -5127,7 +5127,7 @@ function view(model) {
         } else {
           let data = model[0];
           return div(
-            toList([]),
+            toList([id("user-data")]),
             toList([
               p(toList([]), toList([text2("User Data Loaded:")])),
               view_user_list(data),
